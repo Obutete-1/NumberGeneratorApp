@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,6 +11,7 @@ mongoose.connect('mongodb://mongo:27017/nomcomboDB')
     .then(() => console.log("Connected to MongoDB"))
     .catch((error) => console.error("MongoDB connection error:", error));
 
+
 // Schema and Model
 const ComboSchema = new mongoose.Schema({
     username: String,
@@ -17,6 +19,7 @@ const ComboSchema = new mongoose.Schema({
     count: Number,
     combinations: [String]
 });
+
 
 const Combo = mongoose.model('Combo', ComboSchema);
 
